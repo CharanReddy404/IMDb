@@ -1,9 +1,9 @@
 'use strict'
 
 //API Links used
-// https://imdb-api.com/en/API/Title/k_e59052u3/${Movie-ID}/Images,Trailer,Ratings,
+// https://imdb-api.com/en/API/Title/${API}/${Movie-ID}/Images,Trailer,Ratings,
 // https://imdb-api.com/en/API/SearchMovie/k_e59052u3/${Movie-Name}
-
+const api = 'k_f8ns5vy9';
 const home = document.querySelector('#home');
 const fav = document.querySelector('#fav');
 const homeMovies = document.querySelector('#home-card');
@@ -22,7 +22,7 @@ home.addEventListener('click', () => {
 fav.addEventListener('click', () => {
     homeMovies.innerHTML = '';
     favList.forEach((element) => {
-        fetchData(`https://imdb-api.com/en/API/Title/k_e59052u3/${element}/FullCast,Images,Trailer,Ratings,`, 'fav');
+        fetchData(`https://imdb-api.com/en/API/Title/${api}/${element}/FullCast,Images,Trailer,Ratings,`, 'fav');
     });
 })
 
@@ -106,7 +106,7 @@ const fetchData = function (url, input = '') {
 serchBtn.addEventListener('click', () => {
     const value = serchText.value;
     homeMovies.innerHTML = '';
-    fetchDataSearch(`https://imdb-api.com/en/API/SearchMovie/k_e59052u3/${value}`);
+    fetchDataSearch(`https://imdb-api.com/en/API/SearchMovie/${api}/${value}`);
 });
 
 // updating all the data and saving for Favourite list
@@ -133,7 +133,7 @@ function updateFav2() {
 function getFullInfo() {
     const id = event.target.parentElement.id;
     homeMovies.innerHTML = '';
-    fetchData(`https://imdb-api.com/en/API/Title/k_e59052u3/${id}/FullCast,Images,Trailer,Ratings,`);
+    fetchData(`https://imdb-api.com/en/API/Title/${api}/${id}/FullCast,Images,Trailer,Ratings,`);
     renderMovie(data);
 }
 
