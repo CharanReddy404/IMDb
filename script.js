@@ -3,7 +3,8 @@
 //API Links used
 // https://imdb-api.com/en/API/Title/${API}/${Movie-ID}/Images,Trailer,Ratings,
 // https://imdb-api.com/en/API/SearchMovie/k_e59052u3/${Movie-Name}
-const api = 'k_f8ns5vy9';
+// const api = 'k_f8ns5vy9';
+const api = 'k_e59052u3';
 const home = document.querySelector('#home');
 const fav = document.querySelector('#fav');
 const homeMovies = document.querySelector('#home-card');
